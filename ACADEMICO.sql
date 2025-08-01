@@ -1,3 +1,4 @@
+
 CREATE DATABASE IF NOT EXISTS ACADEMICO;
 USE ACADEMICO;
 
@@ -11,7 +12,8 @@ NOMBRE VARCHAR (100) NOT NULL,
 EDAD INT (100),
 NOTA1 FLOAT,
 NOTA2 FLOAT,
-NOTA3 FLOAT
+NOTA3 FLOAT,
+MATERIA INT
 );
 
 CREATE TABLE IF NOT EXISTS CURSOS(
@@ -29,41 +31,32 @@ foreign key (ESTUDIANTE_CEDULA) REFERENCES ESTUDIANTES(CEDULA),
 FOREIGN KEY (CURSO_ID) REFERENCES CURSOS(ID)
 );
 
-INSERT INTO ESTUDIANTES (CEDULA, NOMBRE, EDAD, NOTA1, NOTA2, NOTA3) VALUES
-(101, 'Ana Torres', 20, 6.5, 3.4, 5.2),
-(102, 'Luis Díaz', 22, 5.9, 6.1, 4.8),
-(103, 'María López', 19, 7.1, 6.9, 6.8),
-(104, 'Carlos Pérez', 21, 6.8, 5.7, 6.0),
-(105, 'Elena Gómez', 23, 5.5, 5.0, 4.9),
-(106, 'Jorge Morales', 20, 6.2, 6.5, 6.3),
-(107, 'Valentina Soto', 22, 7.0, 7.2, 7.1),
-(108, 'Felipe Ramírez', 19, 6.3, 5.9, 6.0),
-(109, 'Camila Rojas', 21, 6.9, 7.0, 6.8),
-(110, 'Tomás Herrera', 20, 5.8, 5.5, 5.2);
+INSERT INTO ESTUDIANTES (CEDULA, NOMBRE, EDAD, NOTA1, NOTA2, NOTA3,) VALUES
+(119140413, 'Ana Torres', 20, 90.5, 40.4, 69.2),
+(118140413, 'Luis Díaz', 22, 67.9, 79.1, 59.8),
+(115112030, 'María López', 19, 90.1, 80.9, 70.8),
+(111602040, 'Carlos Pérez', 21, 60.8, 56.7, 90.0),
+(10509080, 'Elena Gómez', 23, 50.5, 57.0, 40.9);
+
 
 INSERT INTO CURSOS (ID, NOMBRE_CURS, CODIGO) VALUES
-(1, 'Matemáticas', 1010),
-(2, 'Física', 1020),
-(3, 'Química', 1030),
-(4, 'Biología', 1040),
-(5, 'Historia', 1050),
-(6, 'Lenguaje', 1060),
-(7, 'Filosofía', 1070),
-(8, 'Inglés', 1080),
-(9, 'Educación Física', 1090),
-(10, 'Programación', 1100);
+(1, 'Matemáticas'),
+(2, 'Física'),
+(3, 'Química'),
+(4, 'Biología'),
+(5, 'Historia'),
+(6, 'Lenguaje'),
+(7, 'Filosofía'),
+(8, 'Inglés'),
+(9, 'Educación Física'),
+(10, 'Programación');
 
 INSERT INTO MATRICULAS (ESTUDIANTE_CEDULA, CURSO_ID) VALUES
-(101, 1),
-(101, 10),
-(102, 2),
-(102, 10),
-(103, 3),
-(104, 4),
-(105, 5),
-(106, 6),
-(107, 7),
-(108, 8),
-(109, 9),
-(110, 1),
-(110, 2);
+(119140413, 1),
+(119140413, 10),
+(118140413, 2),
+(118140413, 10),
+(115112030, 3),
+(111602040, 4),
+(10509080, 5);
+
